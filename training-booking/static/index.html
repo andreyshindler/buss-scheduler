@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Booking</title>
+  <meta name="theme-color" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="/static/icons/icon-192.png">
+  <link rel="manifest" href="/static/manifest.json">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
+  <script src="/static/i18n.js"></script>
+</head>
+<body>
+  <!-- Language toggle -->
+  <button id="lang-toggle" class="lang-toggle" onclick="toggleLang()">English</button>
+
+  <!-- Auth Screen -->
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-card">
+      <div id="auth-content"></div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div id="app" class="app-layout" style="display:none">
+    <header class="app-header">
+      <div class="header-logo" id="header-logo"></div>
+      <nav class="nav-tabs" id="nav-tabs"></nav>
+    </header>
+
+    <main class="main-content" id="main-content"></main>
+
+    <!-- Support chat button -->
+    <a id="support-chat-btn" class="support-btn" href="#" target="_blank" rel="noopener" style="display:none" title="">💬</a>
+
+    <!-- PWA Install Banner -->
+    <div id="pwa-banner" class="pwa-banner" style="display:none">
+      <span data-i18n="pwa_install_hint">הוסף למסך הבית</span>
+      <button class="btn-primary" onclick="installPWA()" data-i18n="pwa_install">התקן אפליקציה</button>
+      <button class="btn-sm" onclick="document.getElementById('pwa-banner').style.display='none'">✕</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal-overlay" class="modal-overlay" style="display:none">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Loading overlay -->
+  <div id="loading-overlay" class="loading-overlay" style="display:none">
+    <div class="spinner"></div>
+  </div>
+
+  <script src="/static/calendar.js" defer></script>
+  <script src="/static/analytics.js" defer></script>
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
