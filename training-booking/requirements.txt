@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic[email]
+python-jose[cryptography]
+passlib[bcrypt]
+httpx
+apscheduler
+openpyxl
+python-multipart
+python-dotenv
+reportlab
+arabic-reshaper
+python-bidi
+Pillow
