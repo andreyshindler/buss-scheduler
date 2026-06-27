@@ -150,7 +150,8 @@ app.include_router(audit_log.router)
 app.include_router(public.router)
 app.include_router(admin_users.router)
 
-# Static files
+# Static files — ensure uploads dir exists before mounting
+os.makedirs("uploads", exist_ok=True)
 app.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
